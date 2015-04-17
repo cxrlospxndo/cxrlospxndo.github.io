@@ -1,1 +1,49 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>    
+  </head>
+  <body ng-app="myApp" ng-controller="myCtrl">
+    <style>
+      #alf{
+        position: fixed;
+        top: 30px;
+        left: 15px;
+      }
+    </style>
+    <canvas id="myCanvas"></canvas>
+    <div id="alf">
+          <input ng-model="myname" ng-change="doit()" type="text" placeholder="My name is ...">
+          <span>Holi {{myname}}!</span>
+	    </div>
+    <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/bubbles.js"></script>
+    <script>
+      var app = angular.module('myApp', []);
+      app.controller('myCtrl', function($scope) {
+            
+      var red = [0, 100, 63];
+      var orange = [40, 100, 60];
+      var green = [75, 100, 40];
+      var blue = [196, 77, 55];
+      var purple = [280, 50, 60];
+      
+      var letterColors = [red, orange, green, blue, purple];
+      $scope.myname = "julia";
+      $scope.doit = function(){
+        var myName = $scope.myname;
+        if(10 < 3) {
+              bubbleShape = 'square';
+          }
+          else {
+              bubbleShape = 'circle';
+          }
+
+          drawName(myName, letterColors);
+          bounceBubbles();
+        };
+      });
+    </script>
+  </body>
+</html>
